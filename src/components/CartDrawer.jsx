@@ -55,9 +55,11 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           {cart.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center space-y-3 py-16 text-[#A69588]">
-              <div className="w-16 h-16 rounded-full bg-[#24150D] flex items-center justify-center text-[#C5A059]">
-                <ShoppingBag className="w-8 h-8" />
-              </div>
+              <img
+                src="/assets/logo.png"
+                alt="Coffee Peyala Logo"
+                className="w-16 h-16 object-contain rounded-full shadow-lg ring-1 ring-[#C5A059]/40 opacity-90"
+              />
               <p className="font-editorial text-xl text-[#F5EDE4]">Your bag is currently empty</p>
               <p className="text-xs max-w-xs">Explore our Signature Collection to add fresh handcrafted artisan coffee.</p>
             </div>

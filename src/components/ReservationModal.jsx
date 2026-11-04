@@ -79,14 +79,21 @@ export default function ReservationModal({ isOpen, onClose }) {
           </div>
         ) : (
           <div>
-            <div className="text-left mb-6 space-y-1">
-              <span className="text-xs uppercase tracking-widest text-[#C5A059] font-semibold">
-                Atmosphere & Hospitality
-              </span>
-              <h3 className="font-editorial text-3xl text-[#F5EDE4]">Reserve Your Table</h3>
-              <p className="text-xs text-[#A69588]">
-                Experience slow handcrafted coffee and peaceful seating at our Mirpur café.
-              </p>
+            <div className="flex items-center gap-3.5 mb-6">
+              <img
+                src="/assets/logo.png"
+                alt="Coffee Peyala Logo"
+                className="w-12 h-12 object-contain rounded-full shadow-lg ring-1 ring-[#C5A059]/40"
+              />
+              <div className="text-left space-y-0.5">
+                <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-semibold block">
+                  Atmosphere & Hospitality
+                </span>
+                <h3 className="font-editorial text-2xl sm:text-3xl text-[#F5EDE4]">Reserve Your Table</h3>
+                <p className="text-xs text-[#A69588]">
+                  Experience slow handcrafted coffee and peaceful seating in Mirpur.
+                </p>
+              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4 text-left">

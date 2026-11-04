@@ -47,9 +47,11 @@ export default function Navbar({ onOpenSearch, onOpenCart, onOpenAuth, cartCount
             href="#home"
             className="flex items-center gap-3 group text-left cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-full bg-[#E8D8C8] text-[#1E110A] flex items-center justify-center font-editorial font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
-              C
-            </div>
+            <img
+              src="/assets/logo.png"
+              alt="Coffee Peyala Official Logo"
+              className="w-11 h-11 object-contain rounded-full shadow-lg group-hover:scale-108 transition-transform duration-300 ring-1 ring-[#C5A059]/40"
+            />
             <div>
               <div className="font-editorial text-xl sm:text-2xl font-bold tracking-wide text-[#F5EDE4] group-hover:text-[#C5A059] transition-colors leading-tight">
                 Coffee Peyala

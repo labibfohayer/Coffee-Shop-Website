@@ -38,9 +38,11 @@ export default function Footer() {
           {/* Brand Info (2 Columns) */}
           <div className="lg:col-span-2 space-y-4 text-left">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#E8D8C8] text-[#1E110A] flex items-center justify-center font-editorial font-bold text-xl shadow-md">
-                C
-              </div>
+              <img
+                src="/assets/logo.png"
+                alt="Coffee Peyala Official Logo"
+                className="w-12 h-12 object-contain rounded-full shadow-xl ring-1 ring-[#C5A059]/40"
+              />
               <div>
                 <div className="font-editorial text-2xl font-bold tracking-wide text-[#F5EDE4] leading-tight">
                   Coffee Peyala

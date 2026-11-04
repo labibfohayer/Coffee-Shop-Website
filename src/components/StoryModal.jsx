@@ -17,13 +17,22 @@ export default function StoryModal({ isOpen, onClose }) {
         </button>
 
         <div className="space-y-4 text-left">
-          <span className="text-xs uppercase tracking-widest text-[#C5A059] font-semibold flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
-            Our Heritage & Roots
-          </span>
-          <h3 className="font-editorial text-3xl sm:text-4xl text-[#F5EDE4]">
-            The Journey of Coffee Peyala
-          </h3>
+          <div className="flex items-center gap-3">
+            <img
+              src="/assets/logo.png"
+              alt="Coffee Peyala Logo"
+              className="w-12 h-12 object-contain rounded-full shadow-lg ring-1 ring-[#C5A059]/40"
+            />
+            <div>
+              <span className="text-xs uppercase tracking-widest text-[#C5A059] font-semibold flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                Our Heritage & Roots
+              </span>
+              <h3 className="font-editorial text-2xl sm:text-3xl text-[#F5EDE4]">
+                The Journey of Coffee Peyala
+              </h3>
+            </div>
+          </div>
 
           <div className="space-y-3 text-xs sm:text-sm text-[#A69588] font-light leading-relaxed">
             <p>

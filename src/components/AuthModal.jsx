@@ -19,9 +19,11 @@ export default function AuthModal({ isOpen, onClose }) {
         </button>
 
         <div className="text-center mb-6 space-y-1">
-          <div className="w-12 h-12 rounded-full bg-[#E8D8C8] text-[#1E110A] flex items-center justify-center font-editorial font-bold text-xl mx-auto shadow-md mb-3">
-            C
-          </div>
+          <img
+            src="/assets/logo.png"
+            alt="Coffee Peyala Logo"
+            className="w-16 h-16 object-contain rounded-full mx-auto shadow-xl ring-2 ring-[#C5A059]/40 mb-3"
+          />
           <h3 className="font-editorial text-2xl text-[#F5EDE4]">
             {isLogin ? 'Welcome Back' : 'Join Coffee Peyala'}
           </h3>

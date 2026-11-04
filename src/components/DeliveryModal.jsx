@@ -60,11 +60,20 @@ export default function DeliveryModal({ isOpen, onClose }) {
           </div>
         ) : (
           <div className="space-y-4 text-left">
-            <div className="flex items-center gap-2 text-[#C5A059]">
-              <Bike className="w-5 h-5" />
-              <span className="text-xs uppercase tracking-widest font-semibold">Express Delivery</span>
+            <div className="flex items-center gap-3.5 mb-2">
+              <img
+                src="/assets/logo.png"
+                alt="Coffee Peyala Logo"
+                className="w-12 h-12 object-contain rounded-full shadow-lg ring-1 ring-[#C5A059]/40"
+              />
+              <div>
+                <div className="flex items-center gap-1.5 text-[#C5A059] text-[10px] uppercase tracking-widest font-semibold">
+                  <Bike className="w-3.5 h-3.5" />
+                  <span>Express Delivery • Mirpur & Dhaka</span>
+                </div>
+                <h3 className="font-editorial text-2xl sm:text-3xl text-[#F5EDE4]">Get Coffee Delivered</h3>
+              </div>
             </div>
-            <h3 className="font-editorial text-3xl text-[#F5EDE4]">Get Coffee Delivered</h3>
             <p className="text-xs text-[#A69588]">
               Hot, insulated thermal packaging preserving aroma & temperature across Mirpur & Dhaka.
             </p>

@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { POPULAR_COLLECTIONS } from '../data/coffeeData';
 import { Image as ImageIcon } from 'lucide-react';
 
-export default function PopularCollections({ onSelectCollection }) {
+export default function PopularCollections({ collectionsData, onSelectCollection }) {
   const [activeTab, setActiveTab] = useState('All');
   const tabs = ['All', 'Coffee', 'Drinks', 'Food', 'Ambience', 'Desserts'];
 
-  const collections = POPULAR_COLLECTIONS[activeTab] || POPULAR_COLLECTIONS['All'];
+  const data = collectionsData || POPULAR_COLLECTIONS;
+  const collections = data[activeTab] || data['All'] || [];
 
   return (
     <section id="popular" className="py-20 bg-[#120B08]">

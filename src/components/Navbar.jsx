@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Search, ShoppingBag, Menu, X, Coffee } from 'lucide-react';
 
-export default function Navbar({ onOpenSearch, onOpenCart, onOpenAuth, cartCount = 0 }) {
+export default function Navbar({ onOpenSearch, onOpenCart, onOpenAuth, cartCount = 0, brand = {}, onOpenAdmin }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
+
+  const {
+    name = 'Coffee Peyala',
+    established = 'EST. SPECIALTY • 2026',
+    logoUrl = '/assets/logo.png'
+  } = brand;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,16 +54,16 @@ export default function Navbar({ onOpenSearch, onOpenCart, onOpenAuth, cartCount
             className="flex items-center gap-3 group text-left cursor-pointer"
           >
             <img
-              src="/assets/logo.png"
-              alt="Coffee Peyala Official Logo"
+              src={logoUrl}
+              alt={`${name} Official Logo`}
               className="w-11 h-11 object-contain rounded-full shadow-lg group-hover:scale-108 transition-transform duration-300 ring-1 ring-[#C5A059]/40"
             />
             <div>
               <div className="font-editorial text-xl sm:text-2xl font-bold tracking-wide text-[#F5EDE4] group-hover:text-[#C5A059] transition-colors leading-tight">
-                Coffee Peyala
+                {name}
               </div>
               <div className="text-[10px] uppercase tracking-widest text-[#A69588] font-medium">
-                EST. SPECIALTY • 2026
+                {established}
               </div>
             </div>
           </a>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -16,7 +16,71 @@ import SearchModal from './components/SearchModal';
 import StoryModal from './components/StoryModal';
 import AuthModal from './components/AuthModal';
 
+// Admin CMS
+import AdminPanel from './components/AdminPanel';
+import { loadSiteContent, saveSiteContent, resetSiteContent } from './data/initialContent';
+
 export default function App() {
+  // CMS Content State with localStorage persistence
+  const [siteContent, setSiteContent] = useState(() => loadSiteContent());
+
+  // Admin View State based on URL path '/admin' or hash '#admin'
+  const [isAdmin, setIsAdmin] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+      return path.startsWith('/admin') || hash === '#admin';
+    }
+    return false;
+  });
+
+  // Keep route synced with browser back/forward and hash changes
+  useEffect(() => {
+    const handleLocationCheck = () => {
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+      setIsAdmin(path.startsWith('/admin') || hash === '#admin');
+    };
+
+    window.addEventListener('popstate', handleLocationCheck);
+    window.addEventListener('hashchange', handleLocationCheck);
+    return () => {
+      window.removeEventListener('popstate', handleLocationCheck);
+      window.removeEventListener('hashchange', handleLocationCheck);
+    };
+  }, []);
+
+  const goToAdmin = () => {
+    try {
+      window.history.pushState({}, '', '/admin');
+    } catch (e) {
+      window.location.hash = '#admin';
+    }
+    setIsAdmin(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const exitAdmin = () => {
+    try {
+      window.history.pushState({}, '', '/');
+    } catch (e) {
+      window.location.hash = '';
+    }
+    setIsAdmin(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSaveContent = (updatedContent) => {
+    saveSiteContent(updatedContent);
+    setSiteContent(updatedContent);
+  };
+
+  const handleResetContent = () => {
+    const reset = resetSiteContent();
+    setSiteContent(reset);
+  };
+
+  // Cart State
   const [cart, setCart] = useState([
     {
       id: 'sig-1',
@@ -78,14 +142,29 @@ export default function App() {
     }
   };
 
+  // If in Admin Mode, show the Admin CMS Panel
+  if (isAdmin) {
+    return (
+      <AdminPanel
+        content={siteContent}
+        onSave={handleSaveContent}
+        onReset={handleResetContent}
+        onExitAdmin={exitAdmin}
+      />
+    );
+  }
+
+  // Regular Visitor Mode
   return (
     <div className="min-h-screen bg-[#120B08] text-[#F5EDE4] selection:bg-[#C5A059] selection:text-[#1A0E08]">
       
       {/* Top Navbar */}
       <Navbar
+        brand={siteContent.brand}
         onOpenSearch={() => setIsSearchOpen(true)}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenAdmin={goToAdmin}
         cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)}
       />
 
@@ -93,27 +172,32 @@ export default function App() {
       <main>
         {/* Screenshot 1: Hero Section with kinetic splash cup & badges */}
         <HeroSection
+          hero={siteContent.hero}
           onOpenDelivery={() => setIsDeliveryOpen(true)}
           onExploreClick={handleExploreClick}
         />
 
         {/* Screenshot 2: About Us with 3 feature cards & metrics */}
         <AboutSection
+          about={siteContent.about}
           onOpenStory={() => setIsStoryOpen(true)}
         />
 
         {/* Screenshot 3 Top: Elevated Coffee & Table Reservation Banner */}
         <InteriorBanner
+          atmosphere={siteContent.atmosphere}
           onOpenReservation={() => setIsReservationOpen(true)}
         />
 
         {/* Screenshot 3 Bottom: Signature Coffee Collection Carousel */}
         <SignatureCollection
+          coffees={siteContent.signatureCoffees}
           onAddToCart={handleAddToCart}
         />
 
         {/* Screenshot 4 Top: Popular Collections with Filter Tabs */}
         <PopularCollections
+          collectionsData={siteContent.popularCollections}
           onSelectCollection={(col) => {
             const el = document.getElementById('collection');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -121,11 +205,15 @@ export default function App() {
         />
 
         {/* Screenshot 4 Middle: Newsletter Subscription Banner */}
-        <Newsletter />
+        <Newsletter newsletter={siteContent.newsletter} />
       </main>
 
       {/* Screenshot 4 Bottom: Footer with Mirpur, Dhaka Details */}
-      <Footer />
+      <Footer
+        contact={siteContent.contact}
+        brand={siteContent.brand}
+        onOpenAdmin={goToAdmin}
+      />
 
       {/* Global Interactive Modals & Drawers */}
       <CartDrawer

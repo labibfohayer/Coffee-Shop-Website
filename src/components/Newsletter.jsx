@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
-export default function Newsletter() {
+export default function Newsletter({ newsletter = {} }) {
+  const {
+    headline = 'Stay up to date',
+    description = 'Signup our newsletter to get update information, news, insight or promotions from our Mirpur roastery.',
+    cupImage = '/assets/newsletter_cup.png',
+    buttonText = 'Subscribe'
+  } = newsletter;
+
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [error, setError] = useState('');
@@ -42,7 +49,7 @@ export default function Newsletter() {
             <div className="md:col-span-3 flex justify-center md:justify-start">
               <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-[#482A1B] shadow-2xl group">
                 <img
-                  src="/assets/newsletter_cup.png"
+                  src={cupImage}
                   alt="Espresso Crema"
                   className="w-full h-full object-cover group-hover:rotate-45 transition-transform duration-1000"
                   onError={(e) => {
@@ -56,10 +63,10 @@ export default function Newsletter() {
             {/* Middle Column: Copy */}
             <div className="md:col-span-5 text-left space-y-2">
               <h3 className="font-editorial text-3xl sm:text-4xl text-[#F5EDE4] font-normal tracking-tight">
-                Stay up to date
+                {headline}
               </h3>
               <p className="text-xs sm:text-sm text-[#A69588] font-light leading-relaxed max-w-sm">
-                Signup our newsletter to get update information, news, insight or promotions from our Mirpur roastery.
+                {description}
               </p>
             </div>
 
@@ -88,7 +95,7 @@ export default function Newsletter() {
                     type="submit"
                     className="w-full bg-[#2A180E] hover:bg-[#3B2215] text-[#E8D8C8] hover:text-[#FFFFFF] border border-[#482A1B] text-xs font-semibold uppercase tracking-wider py-3 rounded-xl transition-all duration-300 cursor-pointer shadow-md"
                   >
-                    Subscribe
+                    {buttonText}
                   </button>
                 </form>
               )}

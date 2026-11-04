@@ -1,33 +1,39 @@
 import React, { useState } from 'react';
 import { Coffee, Award, ShieldCheck, ArrowUpRight, Sparkles } from 'lucide-react';
 
-export default function AboutSection({ onOpenStory }) {
+export default function AboutSection({ about = {}, onOpenStory }) {
   const [activeFeature, setActiveFeature] = useState(0);
 
-  const features = [
-    {
-      title: 'PREMIUM BEANS',
-      desc: 'We source the finest single-origin beans directly from ethical micro-lots around the world.',
-      icon: Coffee
-    },
-    {
-      title: 'EXPERTLY CRAFTED',
-      desc: 'Our certified Q-baristas calibrate grinder microns and extraction seconds for every cup.',
-      icon: Award
-    },
-    {
-      title: 'SUSTAINABLE',
-      desc: 'We are committed to 100% compostable cups, fair-trade premiums, and zero bean wastage.',
-      icon: ShieldCheck
-    }
-  ];
+  const {
+    sectionTag = 'About us',
+    headline = 'A café built by coffee people.',
+    description = 'We opened Coffee Peyala in 2018 with a small La Marzocco, a stubborn belief in single-origin espresso, and a cozy corner shop with good sunlight in Mirpur, Dhaka. Seven years later, bringing uncompromising specialty coffee to everyone.',
+    storyLinkText = 'Read our story',
+    latteImage = '/assets/about_latte.png',
+    machineImage = '/assets/about_machine.png',
+    features = [
+      {
+        title: 'PREMIUM BEANS',
+        desc: 'We source the finest single-origin beans directly from ethical micro-lots around the world.'
+      },
+      {
+        title: 'EXPERTLY CRAFTED',
+        desc: 'Our certified Q-baristas calibrate grinder microns and extraction seconds for every cup.'
+      },
+      {
+        title: 'SUSTAINABLE',
+        desc: 'We are committed to 100% compostable cups, fair-trade premiums, and zero bean wastage.'
+      }
+    ],
+    stats = [
+      { number: '2018', label: 'Brewing Happiness' },
+      { number: '25+', label: 'Passionate baristas' },
+      { number: '100%', label: 'Arabica beans' },
+      { number: '15K+', label: 'Happy customers' }
+    ]
+  } = about;
 
-  const stats = [
-    { number: '2018', label: 'Brewing Happiness' },
-    { number: '25+', label: 'Passionate baristas' },
-    { number: '100%', label: 'Arabica beans' },
-    { number: '15K+', label: 'Happy customers' }
-  ];
+  const featureIcons = [Coffee, Award, ShieldCheck];
 
   return (
     <section id="about" className="relative py-24 bg-[#120B08] overflow-hidden">
@@ -50,7 +56,7 @@ export default function AboutSection({ onOpenStory }) {
             <div className="lg:col-span-3 flex justify-center order-2 lg:order-1">
               <div className="relative group w-full max-w-[260px] rounded-2xl overflow-hidden border border-[#482A1B] shadow-2xl">
                 <img
-                  src="/assets/about_latte.png"
+                  src={latteImage}
                   alt="Freshly pulled Latte Art"
                   className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
@@ -71,22 +77,22 @@ export default function AboutSection({ onOpenStory }) {
               <div className="space-y-3">
                 <span className="text-xs uppercase tracking-widest text-[#C5A059] font-semibold flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5" />
-                  About us
+                  {sectionTag}
                 </span>
                 
                 <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-[#F5EDE4] font-normal leading-tight">
-                  A café built by coffee people.
+                  {headline}
                 </h2>
                 
                 <p className="text-sm sm:text-base text-[#A69588] font-light leading-relaxed">
-                  We opened <strong className="text-[#F5EDE4] font-medium">Coffee Peyala</strong> in 2018 with a small La Marzocco, a stubborn belief in single-origin espresso, and a cozy corner shop with good sunlight in Mirpur, Dhaka. Seven years later, bringing uncompromising specialty coffee to everyone.
+                  {description}
                 </p>
 
                 <button
                   onClick={onOpenStory}
                   className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-[#C5A059] hover:text-[#E8D8C8] transition-colors underline underline-offset-4 cursor-pointer pt-1"
                 >
-                  <span>Read our story</span>
+                  <span>{storyLinkText}</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
@@ -94,10 +100,10 @@ export default function AboutSection({ onOpenStory }) {
               {/* 3 Feature Cards Side-by-Side (Matching Screenshot 2) */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                 {features.map((feat, idx) => {
-                  const Icon = feat.icon;
+                  const Icon = featureIcons[idx % featureIcons.length];
                   return (
                     <div
-                      key={feat.title}
+                      key={feat.title || idx}
                       onMouseEnter={() => setActiveFeature(idx)}
                       className={`p-4 rounded-xl border transition-all duration-300 text-left cursor-pointer ${
                         activeFeature === idx
@@ -125,7 +131,7 @@ export default function AboutSection({ onOpenStory }) {
             <div className="lg:col-span-3 flex justify-center order-3">
               <div className="relative group w-full max-w-[260px] rounded-2xl overflow-hidden border border-[#482A1B] shadow-2xl">
                 <img
-                  src="/assets/about_machine.png"
+                  src={machineImage}
                   alt="La Marzocco Espresso Machine"
                   className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {

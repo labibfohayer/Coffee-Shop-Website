@@ -1,7 +1,25 @@
 import React from 'react';
 import { ChevronRight, Sparkles, MapPin } from 'lucide-react';
 
-export default function HeroSection({ onOpenDelivery, onExploreClick }) {
+export default function HeroSection({ hero = {}, onOpenDelivery, onExploreClick }) {
+  const {
+    tagline = 'Mirpur, Dhaka • Artisanal Roastery',
+    headlinePart1 = 'A slow',
+    headlinePart2 = 'ritual,',
+    headlineItalic = 'poured with intent.',
+    miniPreviewImage = '/assets/mini_espresso_preview.png',
+    description = 'Coffee Peyala is a premium specialty coffee house in Mirpur, Dhaka — handcrafting single-origin espresso, delicate pour-overs, and signature brews.',
+    exploreBtnText = 'EXPLORE MORE',
+    deliveryBtnText = 'GET DELIVERY',
+    heroCupImage = '/assets/coffee_peyala_cup.png',
+    originFootnote = 'Origin: Ethiopia • Colombia • Kenya',
+    tickerBadges = [
+      'Best Coffee Shop 2025',
+      'Q-Grader Baristas',
+      'Direct Trade Origins',
+      'Featured in Monocle'
+    ]
+  } = hero;
   return (
     <section id="home" className="relative min-h-screen pt-28 pb-16 flex flex-col justify-between overflow-hidden bg-[#120B08]">
       
@@ -24,15 +42,15 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
             {/* Location Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#261710]/90 border border-[#44281B] text-[#C5A059] text-xs font-medium tracking-wider uppercase">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Mirpur, Dhaka • Artisanal Roastery</span>
+              <span>{tagline}</span>
             </div>
 
             {/* Editorial Serif Headline */}
             <h1 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-[#F5EDE4] leading-[1.1] sm:leading-[1.12]">
-              A slow{' '}
+              {headlinePart1}{' '}
               <span className="inline-flex items-center align-middle mx-1.5 sm:mx-2.5 px-2 py-1 rounded-xl bg-[#261710] border border-[#44281B] shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img
-                  src="/assets/mini_espresso_preview.png"
+                  src={miniPreviewImage}
                   alt="Espresso extraction"
                   className="w-14 sm:w-20 h-8 sm:h-10 object-cover rounded-lg shadow-inner"
                   onError={(e) => {
@@ -40,14 +58,14 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
                   }}
                 />
               </span>{' '}
-              ritual,
+              {headlinePart2}
               <br />
-              <span className="italic font-light text-[#E8D8C8]">poured with intent.</span>
+              <span className="italic font-light text-[#E8D8C8]">{headlineItalic}</span>
             </h1>
 
             {/* Description */}
             <p className="text-base sm:text-lg text-[#A69588] max-w-xl leading-relaxed font-light">
-              <strong className="text-[#F5EDE4] font-medium">Coffee Peyala</strong> is a premium specialty coffee house in Mirpur, Dhaka — handcrafting single-origin espresso, delicate pour-overs, and signature brews.
+              {description}
             </p>
 
             {/* CTA Action Buttons */}
@@ -56,7 +74,7 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
                 onClick={onExploreClick}
                 className="group flex items-center gap-2.5 bg-[#261710] hover:bg-[#382217] text-[#F5EDE4] hover:text-[#FFFFFF] border border-[#4E2E1F] text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-full shadow-lg hover:shadow-[#C5A059]/10 transition-all duration-300 cursor-pointer"
               >
-                <span>EXPLORE MORE</span>
+                <span>{exploreBtnText}</span>
                 <ChevronRight className="w-4 h-4 text-[#C5A059] group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -64,7 +82,7 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
                 onClick={onOpenDelivery}
                 className="flex items-center gap-2 bg-transparent hover:bg-[#261710]/40 text-[#E8D8C8] hover:text-[#FFFFFF] border border-[#5A3828] text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-full transition-all duration-300 cursor-pointer"
               >
-                <span>GET DELIVERY</span>
+                <span>{deliveryBtnText}</span>
               </button>
             </div>
 
@@ -88,11 +106,11 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
 
               {/* Main Cup Image */}
               <img
-                src="/assets/coffee_peyala_cup.png"
+                src={heroCupImage}
                 alt="Coffee Peyala Specialty Splash Cup"
-                className="relative z-10 w-full h-auto object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.85)] transform group-hover:scale-102 transition-transform duration-500"
+                className="relative z-10 w-full h-auto object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.85)] transform group-hover:scale-102 transition-transform duration-500 rounded-2xl"
                 onError={(e) => {
-                  e.target.src = '/assets/hero_cup_splash.png';
+                  e.target.src = '/assets/coffee_peyala_hero_splash.jpg';
                 }}
               />
 
@@ -103,7 +121,7 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
 
               {/* Subtle Origin Footnote */}
               <div className="absolute -bottom-6 right-0 text-right text-[11px] font-mono text-[#A69588]/80 tracking-widest uppercase">
-                <span>Origin: Ethiopia • Colombia • Kenya</span>
+                <span>{originFootnote}</span>
               </div>
 
             </div>
@@ -117,35 +135,14 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
       <div className="mt-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="bg-[#180E09]/80 backdrop-blur-md border border-[#3B2418]/70 rounded-2xl py-4 px-6 shadow-2xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center divide-y md:divide-y-0 md:divide-x divide-[#3B2418]/60">
-            
-            <div className="py-2 md:py-0 px-2 flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-              <span className="font-editorial text-base sm:text-lg text-[#E8D8C8] tracking-wide">
-                Best Coffee Shop 2025
-              </span>
-            </div>
-
-            <div className="py-2 md:py-0 px-2 flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-              <span className="font-editorial text-base sm:text-lg text-[#E8D8C8] tracking-wide">
-                Q-Grader Baristas
-              </span>
-            </div>
-
-            <div className="py-2 md:py-0 px-2 flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-              <span className="font-editorial text-base sm:text-lg text-[#E8D8C8] tracking-wide">
-                Direct Trade Origins
-              </span>
-            </div>
-
-            <div className="py-2 md:py-0 px-2 flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-              <span className="font-editorial text-base sm:text-lg text-[#E8D8C8] tracking-wide">
-                Featured in Monocle
-              </span>
-            </div>
-
+            {tickerBadges.map((badge, idx) => (
+              <div key={idx} className="py-2 md:py-0 px-2 flex items-center justify-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
+                <span className="font-editorial text-base sm:text-lg text-[#E8D8C8] tracking-wide">
+                  {badge}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

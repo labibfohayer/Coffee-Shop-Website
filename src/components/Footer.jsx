@@ -27,7 +27,26 @@ function TwitterIcon(props) {
   );
 }
 
-export default function Footer() {
+export default function Footer({ contact = {}, brand = {}, onOpenAdmin }) {
+  const {
+    tagline = 'Mirpur’s premier artisanal coffee house. Dedicated to the craft of slow-poured single origins and cozy community conversations in Dhaka.',
+    address = 'Plot 24, Road 3, Block-A, Section-10, Mirpur, Dhaka 1216',
+    phone = '+880 1712-345678 / +880 1823-998877',
+    email = 'mirpur@coffeepeyala.com',
+    hours = 'Saturday – Friday: 8:00 AM – 11:30 PM',
+    facebook = 'https://facebook.com',
+    instagram = 'https://instagram.com',
+    twitter = 'https://twitter.com',
+    copyright = '© 2026 Coffee Peyala (কফি পেয়ালা). All rights reserved.',
+    footerNote = 'Handcrafted with passion in Mirpur, Dhaka ☕'
+  } = contact;
+
+  const {
+    name = 'Coffee Peyala',
+    established = 'EST. SPECIALTY • 2026',
+    logoUrl = '/assets/logo.png'
+  } = brand;
+
   return (
     <footer id="contact" className="bg-[#100906] border-t border-[#3B2418]/70 pt-16 pb-12 text-[#A69588]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,36 +58,36 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4 text-left">
             <div className="flex items-center gap-3">
               <img
-                src="/assets/logo.png"
-                alt="Coffee Peyala Official Logo"
+                src={logoUrl}
+                alt={`${name} Official Logo`}
                 className="w-12 h-12 object-contain rounded-full shadow-xl ring-1 ring-[#C5A059]/40"
               />
               <div>
                 <div className="font-editorial text-2xl font-bold tracking-wide text-[#F5EDE4] leading-tight">
-                  Coffee Peyala
+                  {name}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-[#A69588] font-medium">
-                  EST. SPECIALTY • 2026
+                  {established}
                 </div>
               </div>
             </div>
 
             <p className="text-xs text-[#A69588] leading-relaxed max-w-sm font-light">
-              Mirpur’s premier artisanal coffee house. Dedicated to the craft of slow-poured single origins and cozy community conversations in Dhaka.
+              {tagline}
             </p>
 
             <div className="space-y-2 pt-2 text-xs">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5" />
-                <span>Plot 24, Road 3, Block-A, Section-10, Mirpur, Dhaka 1216</span>
+                <span>{address}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#C5A059] flex-shrink-0" />
-                <span>+880 1712-345678 / +880 1823-998877</span>
+                <span>{phone}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#C5A059] flex-shrink-0" />
-                <span>mirpur@coffeepeyala.com</span>
+                <span>{email}</span>
               </div>
             </div>
           </div>
@@ -84,6 +103,14 @@ export default function Footer() {
               <li><a href="#collection" className="hover:text-[#C5A059] transition-colors">Signature Menu</a></li>
               <li><a href="#atmosphere" className="hover:text-[#C5A059] transition-colors">Atmosphere</a></li>
               <li><a href="#popular" className="hover:text-[#C5A059] transition-colors">Collections</a></li>
+              <li>
+                <button
+                  onClick={onOpenAdmin}
+                  className="text-[#C5A059] hover:underline font-bold text-left cursor-pointer flex items-center gap-1 mt-1"
+                >
+                  <span>Admin Panel ⚙️</span>
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -108,7 +135,7 @@ export default function Footer() {
             </h4>
             <div className="flex items-center gap-3 pt-1">
               <a
-                href="https://facebook.com"
+                href={facebook}
                 target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-full bg-[#1C110A] hover:bg-[#C5A059] hover:text-[#1A0E08] border border-[#3B2418] flex items-center justify-center transition-colors"
@@ -117,7 +144,7 @@ export default function Footer() {
                 <FacebookIcon />
               </a>
               <a
-                href="https://instagram.com"
+                href={instagram}
                 target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-full bg-[#1C110A] hover:bg-[#C5A059] hover:text-[#1A0E08] border border-[#3B2418] flex items-center justify-center transition-colors"
@@ -126,7 +153,7 @@ export default function Footer() {
                 <InstagramIcon />
               </a>
               <a
-                href="https://twitter.com"
+                href={twitter}
                 target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-full bg-[#1C110A] hover:bg-[#C5A059] hover:text-[#1A0E08] border border-[#3B2418] flex items-center justify-center transition-colors"
@@ -138,7 +165,7 @@ export default function Footer() {
 
             <div className="pt-4 text-xs">
               <span className="text-[#C5A059] block font-semibold">Opening Hours:</span>
-              <span className="text-[11px] block text-[#A69588] pt-1">Saturday – Friday: 8:00 AM – 11:30 PM</span>
+              <span className="text-[11px] block text-[#A69588] pt-1">{hours}</span>
             </div>
           </div>
 
@@ -146,8 +173,8 @@ export default function Footer() {
 
         {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#7A6A5E] gap-4">
-          <p>© 2026 Coffee Peyala (কফি পেয়ালা). All rights reserved.</p>
-          <p className="font-mono text-[11px]">Handcrafted with passion in Mirpur, Dhaka ☕</p>
+          <p>{copyright}</p>
+          <p className="font-mono text-[11px]">{footerNote}</p>
         </div>
 
       </div>

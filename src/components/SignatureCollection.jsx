@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import { SIGNATURE_COFFEES } from '../data/coffeeData';
 import { ChevronLeft, ChevronRight, Plus, Star, Sparkles } from 'lucide-react';
 
-export default function SignatureCollection({ onAddToCart }) {
+export default function SignatureCollection({ coffees, onAddToCart }) {
+  const items = coffees && coffees.length > 0 ? coffees : SIGNATURE_COFFEES;
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -65,7 +66,7 @@ export default function SignatureCollection({ onAddToCart }) {
           className="flex gap-6 overflow-x-auto pb-6 scrollbar-none snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {SIGNATURE_COFFEES.map((item) => (
+          {items.map((item) => (
             <div
               key={item.id}
               className="flex-shrink-0 w-[240px] sm:w-[280px] bg-[#1A100A] border border-[#3B2418] hover:border-[#C5A059]/50 rounded-2xl overflow-hidden group transition-all duration-300 shadow-xl snap-start flex flex-col justify-between"

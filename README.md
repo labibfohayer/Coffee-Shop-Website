@@ -1,70 +1,118 @@
-# ☕ Coffee Peyala (কফি পেয়ালা) — Specialty Coffee House
+# Coffee Peyala - Specialty Coffee House and Roastery Web Application
 
-> **A slow ritual, poured with intent.**  
-> Premium artisan coffee house and roastery web application for **Coffee Peyala**, located in **Mirpur-10, Dhaka, Bangladesh**.
-
----
-
-## 🌟 Overview & Highlights
-
-**Coffee Peyala** is an artisanal coffee house website crafted with modern web technologies, inspired by luxury coffeehouse editorial aesthetics:
-
-- **Custom Hero Showcase:** Custom-branded "COFFEE PEYALA" splash cup, rising steam particle animations, and 3D floating roasted coffee beans.
-- **Bento Heritage Section:** Story of the roastery with 3 feature cards (*Premium Beans, Expertly Crafted, Sustainable*) and key metrics (*Brewing Happiness, Arabica Beans, Baristas*).
-- **Atmosphere & Table Booking:** Scandinavian café interior with a real-time **Table Reservation Modal** (Date, time slot, guest count, seating preference).
-- **Signature Menu Carousel:** Smooth horizontal drag-and-scroll carousel with quick *"Add to Cart"* functionality.
-- **Popular Collections & Bento Gallery:** Dynamic category filter tabs (*All, Coffee, Drinks, Food, Ambience, Desserts*) with multi-thumbnail bento cards.
-- **Interactive Cart & Delivery:** Slide-in coffee bag drawer with price breakdown (in ৳ BDT) and express delivery booking for Mirpur & Dhaka.
-- **Newsletter Subscription:** Interactive email validation with confetti celebration.
+A modern, responsive web application and digital storefront for Coffee Peyala, an artisanal coffee house and micro-roastery based in Mirpur, Dhaka, Bangladesh. Built with React 19, Vite 6, and Tailwind CSS v4.
 
 ---
 
-## 🛠️ Tech Stack
+## Project Overview
 
-- **Framework:** React 19 + Vite 6
-- **Styling:** Tailwind CSS v4
-- **Icons:** Lucide React
-- **Animations:** CSS Keyframes & Kinetic Micro-interactions
-- **Feedback & FX:** Canvas Confetti
+Coffee Peyala is an interactive digital storefront engineered to reflect the ambiance, craft, and menu of a specialty coffee roastery. The application provides customers with a seamless browsing experience, featuring interactive menu exploration, a real-time table booking reservation engine, an animated sliding cart drawer with currency calculations in Bangladeshi Taka (BDT), and interactive engagement workflows.
 
 ---
 
-## 🚀 Getting Started
+## Key Features
 
-### 1. Clone the repository:
+- Interactive Hero Experience: Custom-engineered visual showcase with atmospheric steam particle animations and floating roasted coffee bean physics.
+- Bento Grid Heritage Showcase: Information architecture highlighting coffee bean origin, roasting profiles, sustainability commitments, and key operational metrics.
+- Real-Time Table Reservation Engine: Interactive modal allowing guests to schedule dine-in visits by specifying reservation date, time slots, party size, and seating preferences (e.g., Lounge, Window, Espresso Bar).
+- Signature Menu Carousel: Smooth horizontal drag-and-scroll carousel enabling fast navigation across signature brews, cold drinks, and manual pours.
+- Dynamic Category Filtering: Real-time categorization and gallery tabs covering Coffee, Handcrafted Drinks, Bakery Items, Desserts, and Roastery Ambience.
+- Slide-In Cart and Checkout Drawer: Responsive sliding drawer with real-time price summation, item quantity increment/decrement controls, delivery fee calculation, and order dispatch workflow.
+- Newsletter Validation with Visual Feedback: Client-side email format validation with integrated canvas confetti visual triggers upon successful subscription.
+- Responsive and Accessible Layout: Mobile-first responsive implementation adhering to modern semantic HTML standards and touch ergonomics.
+
+---
+
+## Tech Stack
+
+- Frontend Framework: React 19
+- Build Tool and Dev Server: Vite 6
+- Styling: Tailwind CSS v4 (using the `@tailwindcss/vite` plugin)
+- Component Icons: Lucide React
+- Visual Effects: Canvas Confetti
+- Type Checking: TypeScript / Modern ECMAScript Modules
+
+---
+
+## Project Structure
+
+```
+Coffee-Shop-Website/
+├── public/
+│   ├── _redirects             # SPA routing rewrite rules for edge hosting
+│   └── assets/                # Photography, roastery cup assets, and textures
+├── src/
+│   ├── components/            # Reusable UI modules (Hero, Menu, Bento, Modal)
+│   ├── data/                  # Menu items, coffee origins, and pricing datasets
+│   ├── App.jsx / App.tsx      # Main application container and view routing
+│   ├── index.css              # Global styles and Tailwind CSS v4 directives
+│   └── main.jsx / main.tsx    # React application root entry point
+├── index.html                 # Single-page HTML entry point
+├── package.json               # Node.js project dependencies and run scripts
+├── vite.config.js             # Vite configuration and Tailwind plugin hooks
+└── README.md                  # Project documentation
+```
+
+---
+
+## Installation and Setup Guide
+
+### Prerequisites
+- Node.js version 18.x or higher
+- npm version 9.x or higher (or pnpm / yarn)
+
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/labibfohayer/Coffee-Shop-Website.git
 cd Coffee-Shop-Website
 ```
 
-### 2. Install dependencies:
+### 2. Install Project Dependencies
 ```bash
 npm install
 ```
 
-### 3. Run development server:
+### 3. Start the Development Server
 ```bash
 npm run dev
 ```
+Open your browser and navigate to `http://localhost:5173` to view the live development environment with Hot Module Replacement (HMR).
 
-Visit `http://localhost:5173` to explore the website.
-
-### 4. Build for production:
+### 4. Build for Production
+To generate an optimized, minified production build:
 ```bash
 npm run build
+```
+The compiled output will be generated inside the `dist/` directory, ready for deployment to any static CDN host (e.g., Cloudflare Pages, Vercel, Netlify).
+
+### 5. Preview Production Build Locally
+```bash
+npm run preview
 ```
 
 ---
 
-## 📍 Flagship Outlet
+## Production Deployment
 
-- **Location:** Plot 24, Road 3, Block-A, Section-10, Mirpur, Dhaka 1216, Bangladesh
-- **Contact:** +880 1712-345678 / +880 1823-998877
-- **Email:** mirpur@coffeepeyala.com
-- **Hours:** Saturday – Friday: 8:00 AM – 11:30 PM
+The project is pre-configured with a `public/_redirects` file for single-page application routing on modern edge networks:
+
+- **Cloudflare Pages / Netlify / Vercel**:
+  - Build Command: `npm run build`
+  - Output Directory: `dist`
+  - Node Version: `>=18`
 
 ---
 
-## 📄 License
+## Author and Contact
 
-Crafted with passion by **Labib Fohayer** for **Coffee Peyala**.
+Developed by **Labib Fohayer**.
+
+- GitHub: [https://github.com/labibfohayer](https://github.com/labibfohayer)
+- Flagship Roastery: Section 10, Mirpur, Dhaka 1216, Bangladesh
+- Inquiries: Available via GitHub repository issues or portfolio contact
+
+---
+
+## License
+
+This project is licensed under the MIT License. Feel free to reference the architecture and code for educational or development purposes.

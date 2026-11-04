@@ -47,7 +47,7 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
 
             {/* Description */}
             <p className="text-base sm:text-lg text-[#A69588] max-w-xl leading-relaxed font-light">
-              <strong className="text-[#F5EDE4] font-medium">Coffeer Peyala</strong> is a premium specialty coffee house in Mirpur, Dhaka — handcrafting single-origin espresso, delicate pour-overs, and signature brews.
+              <strong className="text-[#F5EDE4] font-medium">Coffee Peyala</strong> is a premium specialty coffee house in Mirpur, Dhaka — handcrafting single-origin espresso, delicate pour-overs, and signature brews.
             </p>
 
             {/* CTA Action Buttons */}
@@ -88,8 +88,8 @@ export default function HeroSection({ onOpenDelivery, onExploreClick }) {
 
               {/* Main Cup Image */}
               <img
-                src="/assets/coffeer_peyala_cup.png"
-                alt="Coffeer Peyala Specialty Splash Cup"
+                src="/assets/coffee_peyala_cup.png"
+                alt="Coffee Peyala Specialty Splash Cup"
                 className="relative z-10 w-full h-auto object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.85)] transform group-hover:scale-102 transition-transform duration-500"
                 onError={(e) => {
                   e.target.src = '/assets/hero_cup_splash.png';

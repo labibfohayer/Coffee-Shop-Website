@@ -18,7 +18,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
         colors: ['#C5A059', '#E8D8C8', '#4E2E1F']
       });
     } catch (e) {}
-    alert(`Thank you for ordering with Coffeer Peyala!\nTotal: ৳${total}\nOur Mirpur barista team has received your order.`);
+    alert(`Thank you for ordering with Coffee Peyala!\nTotal: ৳${total}\nOur Mirpur barista team has received your order.`);
     onClearCart();
     onClose();
   };

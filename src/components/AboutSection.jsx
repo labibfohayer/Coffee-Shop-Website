@@ -35,7 +35,7 @@ export default function AboutSection({ onOpenStory }) {
       {/* Background Watermark Ghost Text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none opacity-[0.03] text-center whitespace-nowrap z-0">
         <span className="font-editorial text-[14vw] font-bold text-[#F5EDE4] tracking-widest uppercase">
-          Coffeer Peyala
+          Coffee Peyala
         </span>
       </div>
 
@@ -79,7 +79,7 @@ export default function AboutSection({ onOpenStory }) {
                 </h2>
                 
                 <p className="text-sm sm:text-base text-[#A69588] font-light leading-relaxed">
-                  We opened <strong className="text-[#F5EDE4] font-medium">Coffeer Peyala</strong> in 2018 with a small La Marzocco, a stubborn belief in single-origin espresso, and a cozy corner shop with good sunlight in Mirpur, Dhaka. Seven years later, bringing uncompromising specialty coffee to everyone.
+                  We opened <strong className="text-[#F5EDE4] font-medium">Coffee Peyala</strong> in 2018 with a small La Marzocco, a stubborn belief in single-origin espresso, and a cozy corner shop with good sunlight in Mirpur, Dhaka. Seven years later, bringing uncompromising specialty coffee to everyone.
                 </p>
 
                 <button

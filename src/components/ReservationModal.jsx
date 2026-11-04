@@ -66,7 +66,7 @@ export default function ReservationModal({ isOpen, onClose }) {
             </div>
             <h3 className="font-editorial text-3xl text-[#F5EDE4]">Table Reserved!</h3>
             <p className="text-sm text-[#A69588] max-w-sm mx-auto">
-              We look forward to hosting you at <strong className="text-[#F5EDE4]">Coffeer Peyala, Mirpur</strong> on {formData.date} at {formData.time} for {formData.guests} guests.
+              We look forward to hosting you at <strong className="text-[#F5EDE4]">Coffee Peyala, Mirpur</strong> on {formData.date} at {formData.time} for {formData.guests} guests.
             </p>
             <div className="pt-4">
               <button

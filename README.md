@@ -1,15 +1,15 @@
-# ☕ Coffeer Peyala (কফি পেয়ালা) — Specialty Coffee House
+# ☕ Coffee Peyala (কফি পেয়ালা) — Specialty Coffee House
 
 > **A slow ritual, poured with intent.**  
-> Premium artisan coffee house and roastery web application for **Coffeer Peyala**, located in **Mirpur-10, Dhaka, Bangladesh**.
+> Premium artisan coffee house and roastery web application for **Coffee Peyala**, located in **Mirpur-10, Dhaka, Bangladesh**.
 
 ---
 
 ## 🌟 Overview & Highlights
 
-**Coffeer Peyala** is an artisanal coffee house website crafted with modern web technologies, inspired by luxury coffeehouse editorial aesthetics:
+**Coffee Peyala** is an artisanal coffee house website crafted with modern web technologies, inspired by luxury coffeehouse editorial aesthetics:
 
-- **Custom Hero Showcase:** Custom-branded "COFFEER PEYALA" splash cup, rising steam particle animations, and 3D floating roasted coffee beans.
+- **Custom Hero Showcase:** Custom-branded "COFFEE PEYALA" splash cup, rising steam particle animations, and 3D floating roasted coffee beans.
 - **Bento Heritage Section:** Story of the roastery with 3 feature cards (*Premium Beans, Expertly Crafted, Sustainable*) and key metrics (*Brewing Happiness, Arabica Beans, Baristas*).
 - **Atmosphere & Table Booking:** Scandinavian café interior with a real-time **Table Reservation Modal** (Date, time slot, guest count, seating preference).
 - **Signature Menu Carousel:** Smooth horizontal drag-and-scroll carousel with quick *"Add to Cart"* functionality.
@@ -60,11 +60,11 @@ npm run build
 
 - **Location:** Plot 24, Road 3, Block-A, Section-10, Mirpur, Dhaka 1216, Bangladesh
 - **Contact:** +880 1712-345678 / +880 1823-998877
-- **Email:** mirpur@coffeerpeyala.com
+- **Email:** mirpur@coffeepeyala.com
 - **Hours:** Saturday – Friday: 8:00 AM – 11:30 PM
 
 ---
 
 ## 📄 License
 
-Crafted with passion by **Labib Fohayer** for **Coffeer Peyala**.
+Crafted with passion by **Labib Fohayer** for **Coffee Peyala**.

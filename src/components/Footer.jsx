@@ -43,7 +43,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-editorial text-2xl font-bold tracking-wide text-[#F5EDE4] leading-tight">
-                  Coffeer Peyala
+                  Coffee Peyala
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-[#A69588] font-medium">
                   EST. SPECIALTY • 2026
@@ -66,7 +66,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#C5A059] flex-shrink-0" />
-                <span>mirpur@coffeerpeyala.com</span>
+                <span>mirpur@coffeepeyala.com</span>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function Footer() {
 
         {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#7A6A5E] gap-4">
-          <p>© 2026 Coffeer Peyala (কফি পেয়ালা). All rights reserved.</p>
+          <p>© 2026 Coffee Peyala (কফি পেয়ালা). All rights reserved.</p>
           <p className="font-mono text-[11px]">Handcrafted with passion in Mirpur, Dhaka ☕</p>
         </div>
 

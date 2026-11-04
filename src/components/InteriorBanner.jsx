@@ -12,7 +12,7 @@ export default function InteriorBanner({ onOpenReservation }) {
           {/* Background Image with Dark Vignette */}
           <img
             src="/assets/cafe_interior.png"
-            alt="Coffeer Peyala Mirpur Café Atmosphere"
+            alt="Coffee Peyala Mirpur Café Atmosphere"
             className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-1000"
             onError={(e) => {
               e.target.src = 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80';

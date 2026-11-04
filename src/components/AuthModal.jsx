@@ -23,7 +23,7 @@ export default function AuthModal({ isOpen, onClose }) {
             C
           </div>
           <h3 className="font-editorial text-2xl text-[#F5EDE4]">
-            {isLogin ? 'Welcome Back' : 'Join Coffeer Peyala'}
+            {isLogin ? 'Welcome Back' : 'Join Coffee Peyala'}
           </h3>
           <p className="text-xs text-[#A69588]">
             {isLogin ? 'Sign in to access your coffee rewards & orders' : 'Create an account for exclusive roasts & benefits'}

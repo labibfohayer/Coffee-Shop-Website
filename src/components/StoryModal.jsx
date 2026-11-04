@@ -22,7 +22,7 @@ export default function StoryModal({ isOpen, onClose }) {
             Our Heritage & Roots
           </span>
           <h3 className="font-editorial text-3xl sm:text-4xl text-[#F5EDE4]">
-            The Journey of Coffeer Peyala
+            The Journey of Coffee Peyala
           </h3>
 
           <div className="space-y-3 text-xs sm:text-sm text-[#A69588] font-light leading-relaxed">
@@ -30,7 +30,7 @@ export default function StoryModal({ isOpen, onClose }) {
               In 2018, amidst the bustling rhythm of Mirpur, Dhaka, we asked ourselves a question: <em>Why can’t a neighborhood cup of coffee feel like a contemplative, world-class sanctuary?</em>
             </p>
             <p>
-              We began with a restored two-group La Marzocco Linea, beans sourced directly from small family microlots in Sidama and Huila, and an unwavering respect for the ritual of slow extraction. We named it <strong className="text-[#F5EDE4]">"Coffeer Peyala" (কফি পেয়ালা)</strong> — evoking the intimacy of sharing a warm clay or porcelain cup with friends.
+              We began with a restored two-group La Marzocco Linea, beans sourced directly from small family microlots in Sidama and Huila, and an unwavering respect for the ritual of slow extraction. We named it <strong className="text-[#F5EDE4]">"Coffee Peyala" (কফি পেয়ালা)</strong> — evoking the intimacy of sharing a warm clay or porcelain cup with friends.
             </p>
             <p>
               Over the years, our Mirpur roastery has grown into a vibrant haven for artists, thinkers, coders, and coffee connoisseurs. Every bean is small-batch roasted on-site, every milk texture tuned to silky perfection, and every visitor welcomed as family.

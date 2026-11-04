@@ -52,7 +52,7 @@ export default function Navbar({ onOpenSearch, onOpenCart, onOpenAuth, cartCount
             </div>
             <div>
               <div className="font-editorial text-xl sm:text-2xl font-bold tracking-wide text-[#F5EDE4] group-hover:text-[#C5A059] transition-colors leading-tight">
-                Coffeer Peyala
+                Coffee Peyala
               </div>
               <div className="text-[10px] uppercase tracking-widest text-[#A69588] font-medium">
                 EST. SPECIALTY • 2026

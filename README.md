@@ -1,5 +1,7 @@
 # Coffee Peyala - Specialty Coffee House and Roastery Web Application
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-coffeepeyala.pages.dev-brown?style=for-the-badge&logo=cloudflare&logoColor=white)](https://coffeepeyala.pages.dev/)
+
 A modern, responsive web application and digital storefront for Coffee Peyala, an artisanal coffee house and micro-roastery based in Mirpur, Dhaka, Bangladesh. Built with React 19, Vite 6, and Tailwind CSS v4.
 
 ---
@@ -76,7 +78,7 @@ npm install
 ```bash
 npm run dev
 ```
-Open your browser and navigate to `http://localhost:5173` to view the live development environment with Hot Module Replacement (HMR).
+Open your browser and navigate to `http://localhost:5173` for local development with HMR, or visit the live deployment at **[coffeepeyala.pages.dev](https://coffeepeyala.pages.dev/)**.
 
 ### 4. Build for Production
 To generate an optimized, minified production build:
